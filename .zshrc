@@ -80,6 +80,11 @@ autoload -U compinit && compinit -u
 
 
 source $ZSH/oh-my-zsh.sh
+source <(fzf --zsh)
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'batcat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 # User configuration
 
@@ -111,6 +116,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='eza'
 alias cat='batcat'
+alias bat='batcat'
 alias vim='/opt/nvim/bin/nvim' 
 
 
@@ -121,4 +127,6 @@ export MANROFFOPT="-c"
 
 # Created by `pipx` on 2024-09-07 09:42:36
 export PATH="$PATH:/home/tal/.local/bin"
-alias dotfiles=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
