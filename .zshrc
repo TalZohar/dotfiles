@@ -80,7 +80,6 @@ autoload -U compinit && compinit -u
 
 
 source $ZSH/oh-my-zsh.sh
-source <(fzf --zsh)
 export FZF_CTRL_T_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'batcat -n --color=always {}'
