@@ -6,7 +6,7 @@ return {
       group = vim.api.nvim_create_augroup("lazyvim_vimtex_conceal", { clear = true }),
       pattern = { "bib", "tex" },
       callback = function()
-        vim.wo.conceallevel = 0
+        vim.wo.conceallevel = 1
       end,
     })
     vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
@@ -14,6 +14,7 @@ return {
 
     vim.g.vimtex_view_method = "zathura" -- <== macos specific, you can use zathura or sumatra or something else.
     vim.g.vimtex_view_skim_sync = 1
+    vim.g.tex_conceal = "abdmg" -- show accents, math, greek, delimiters
     vim.g.vimtex_view_skim_activate = 1
     vim.g.vimtex_view_skim_reading_bar = 1
 
