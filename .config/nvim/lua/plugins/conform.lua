@@ -55,6 +55,7 @@ return {
         fish = { "fish_indent" },
         sh = { "shfmt" },
         tex = { "latexindent" },
+        python = { "isort", "black" },
       },
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.
